@@ -1,19 +1,15 @@
 # TaskFlow — Task Management System
 
-A full-stack task management application built as a capstone project. TaskFlow lets teams create tasks, assign them to members, track progress, and manage users — all through a clean, modern interface.
-
----
+A full-stack task management application built as a capstone project. TaskFlow lets teams create tasks, assign them to members, track progress, and manage users through a clean, modern interface.
 
 ## What it does
 
-- **Login & Register** — Secure JWT-based authentication
-- **Dashboard** — See all tasks with live status counters
-- **Create & Edit Tasks** — Add titles, descriptions, assign to users
-- **Track Status** — Move tasks between Todo, In Progress, and Done
-- **Admin Panel** — Admins can view and manage all users
-- **Role-based access** — Admins see everything, Users see their work
-
----
+- Login and Register with secure JWT-based authentication
+- Dashboard with live task status counters
+- Create and edit tasks with titles, descriptions, and assignees
+- Track status across Todo, In Progress, and Done
+- Admin panel to view and manage all users
+- Role-based access so Admins see everything and Users see their work
 
 ## Tech Stack
 
@@ -24,8 +20,6 @@ A full-stack task management application built as a capstone project. TaskFlow l
 | Database | MySQL 8 |
 | Auth | JWT (JSON Web Tokens) |
 | DevOps | Docker, Docker Compose, GitHub Actions |
-
----
 
 ## How to run locally
 
@@ -66,7 +60,7 @@ app.jwt.expiration=86400000
 cd backend
 mvn spring-boot:run
 ```
-Backend runs at `http://localhost:8080`
+Backend runs at http://localhost:8080
 
 ### 5. Run the frontend
 ```bash
@@ -74,31 +68,21 @@ cd frontend
 npm install
 npm run dev
 ```
-Frontend runs at `http://localhost:5173`
-
----
+Frontend runs at http://localhost:5173
 
 ## How to run with Docker
 ```bash
-# Create a .env file at the root with:
-# MYSQL_ROOT_PASSWORD=yourpassword
-
 docker-compose up --build
 ```
 
-- Frontend: `http://localhost:4173`
-- Backend: `http://localhost:8080`
-
----
+Frontend at http://localhost:4173 and Backend at http://localhost:8080
 
 ## Sample Users
 
-After running the app, register a new account. To make it an Admin:
+After running the app, register a new account. To make it an Admin run this in MySQL:
 ```sql
 UPDATE users SET role = 'ADMIN' WHERE email = 'your@email.com';
 ```
-
----
 
 ## API Endpoints
 
@@ -112,12 +96,10 @@ UPDATE users SET role = 'ADMIN' WHERE email = 'your@email.com';
 | DELETE | /api/tasks/{id} | Delete task | User |
 | GET | /api/users | Get all users | Admin |
 
----
-
 ## Project Structure
 ```
 taskflow/
-├── backend/          # Spring Boot app
+├── backend/
 │   ├── src/main/java/com/taskflow/backend/
 │   │   ├── controller/
 │   │   ├── service/
@@ -126,7 +108,7 @@ taskflow/
 │   │   ├── security/
 │   │   └── dto/
 │   └── pom.xml
-├── frontend/         # React app
+├── frontend/
 │   ├── src/
 │   │   ├── pages/
 │   │   └── api/
@@ -135,15 +117,10 @@ taskflow/
 └── .github/workflows/ci.yml
 ```
 
----
-
 ## Known Limitations
 
-- Backend is not yet deployed to a cloud provider (runs locally or via Docker)
+- Backend is not yet deployed to a cloud provider and runs locally or via Docker
 - No pagination on task list yet
 - Password reset not implemented
 
----
-
-
-Built with ❤️ by Sumit Roy
+Built with love by Sumit Roy
