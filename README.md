@@ -1,4 +1,4 @@
-# TaskFlow — Task Management System
+# TaskFlow : Task Management System
 
 A full-stack task management application built as a capstone project. TaskFlow lets teams create tasks, assign them to members, track progress, and manage users through a clean, modern interface.
 
